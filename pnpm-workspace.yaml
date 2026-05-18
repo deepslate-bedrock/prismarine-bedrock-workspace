@@ -1,0 +1,6 @@
+packages:
+  - "repos/prismarine-bedrock"
+  - "repos/prismarine-bedrock-ai"
+
+allowBuilds:
+  better-sqlite3: true

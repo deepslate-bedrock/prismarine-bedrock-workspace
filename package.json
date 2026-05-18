@@ -1,0 +1,17 @@
+{
+  "name": "prismarine-bedrock-workspace",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Workspace for prismarine-bedrock and prismarine-bedrock-ai.",
+  "scripts": {
+    "test:base": "pnpm --dir repos/prismarine-bedrock run test:static",
+    "test:base:fake-world": "pnpm --dir repos/prismarine-bedrock run test:fake-world",
+    "test:ai": "pnpm --dir repos/prismarine-bedrock-ai run test:static"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "overrides": {
+      "prismarine-bedrock": "link:repos/prismarine-bedrock"
+    }
+  }
+}
