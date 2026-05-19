@@ -20,9 +20,20 @@ Both entries are Git submodules pinned to migration branches for review:
 ```powershell
 git submodule update --init --recursive
 pnpm install
+pnpm run ref:install
 ```
 
 The root `pnpm-workspace.yaml` links the two packages locally, so the AI lab can resolve `prismarine-bedrock` from the sibling base checkout.
+
+`pnpm run ref:install` clones optional, gitignored reference repositories into `ref/`:
+
+- `minecraft-data` from `PrismarineJS/minecraft-data`
+- Bedrock protocol docs from `Mojang/bedrock-protocol-docs`
+- `gophertunnel` from `Sandertv/gophertunnel`
+- `geyser` from `GeyserMC/Geyser`
+- `boar` from `Oryxel/Boar`
+
+Use `pnpm run ref:status` to show their current heads and `pnpm run ref:update` to fast-forward them.
 
 ## Common Commands
 
@@ -30,4 +41,5 @@ The root `pnpm-workspace.yaml` links the two packages locally, so the AI lab can
 pnpm --dir repos/prismarine-bedrock run test:static
 pnpm --dir repos/prismarine-bedrock run test:fake-world
 pnpm --dir repos/prismarine-bedrock-ai run test:static
+pnpm run ref:status
 ```

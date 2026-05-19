@@ -6,7 +6,11 @@
   "scripts": {
     "test:base": "pnpm --dir repos/prismarine-bedrock run test:static",
     "test:base:fake-world": "pnpm --dir repos/prismarine-bedrock run test:fake-world",
-    "test:ai": "pnpm --dir repos/prismarine-bedrock-ai run test:static"
+    "test:ai": "pnpm --dir repos/prismarine-bedrock-ai run test:static",
+    "ref:list": "node scripts/reference-repos.js list",
+    "ref:status": "node scripts/reference-repos.js status",
+    "ref:install": "node scripts/reference-repos.js install",
+    "ref:update": "node scripts/reference-repos.js update"
   },
   "packageManager": "pnpm@10.33.0",
   "pnpm": {
