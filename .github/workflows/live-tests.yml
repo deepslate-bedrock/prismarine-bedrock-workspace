@@ -142,4 +142,4 @@ jobs:
           --world=${{ github.event_name == 'workflow_dispatch' && inputs.world || vars['LIVE_TEST_WORLD'] || 'superflat' }}
           --exit-after-client
           --client-timeout-ms=900000
-          --client pnpm --dir repos/prismarine-bedrock run test:live
+          --client pnpm --dir ../prismarine-bedrock run test:live
