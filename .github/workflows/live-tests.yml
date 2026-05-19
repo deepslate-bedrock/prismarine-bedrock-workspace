@@ -88,6 +88,9 @@ jobs:
           distribution: temurin
           java-version: "21"
 
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
       - name: Get pnpm store path
         id: pnpm-store
         shell: bash
