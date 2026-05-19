@@ -1,8 +1,8 @@
 [submodule "repos/prismarine-bedrock"]
 	path = repos/prismarine-bedrock
-	url = https://github.com/GenerelSchwerz/prismarine-bedrock.git
+	url = https://github.com/deepslate-bedrock/prismarine-bedrock.git
 	branch = main
 [submodule "repos/prismarine-bedrock-ai"]
 	path = repos/prismarine-bedrock-ai
-	url = https://github.com/GenerelSchwerz/prismarine-bedrock-ai.git
+	url = https://github.com/deepslate-bedrock/prismarine-bedrock-ai.git
 	branch = main
