@@ -1,8 +1,8 @@
 [submodule "repos/prismarine-bedrock"]
 	path = repos/prismarine-bedrock
 	url = https://github.com/GenerelSchwerz/prismarine-bedrock.git
-	branch = migration/base-cleanup
+	branch = main
 [submodule "repos/prismarine-bedrock-ai"]
 	path = repos/prismarine-bedrock-ai
 	url = https://github.com/GenerelSchwerz/prismarine-bedrock-ai.git
-	branch = migration/initial-ai-split
+	branch = main
