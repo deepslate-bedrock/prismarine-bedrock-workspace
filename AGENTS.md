@@ -15,6 +15,13 @@ Start from this workspace when a task may involve both the base library and the 
 4. Do not move packet-parity logs or task logs back into the base library.
 5. Keep raw runtime artifacts in each repo's ignored `logs/`, `.e2e-servers/`, or `scripts/tmp/` directories.
 
+## Context Budget
+
+- Pull context sparsely. Start with `rg`, `rg --files`, `git diff --stat`, and targeted file ranges instead of opening whole directories, long task logs, generated data, or raw packet dumps.
+- Read only the sections needed for the next decision. For task logs, prefer `Current State`, `Change Ledger`, `Evidence Log`, `Resume Notes`, and the final/failure summary before older narrative.
+- Summarize findings in task logs instead of pasting command output. Keep raw logs under ignored artifact directories and point to the file path plus the few packet names, request IDs, or status values that matter.
+- When delegating to other agents, give each agent a narrow question, owned files, and exact paths or line ranges to inspect. Ask them to return concise findings and changed paths, not broad repo summaries.
+
 ## Reference Sources
 
 The workspace owns shared external source checkouts under gitignored `ref/`. Use `pnpm run ref:install` to clone them, `pnpm run ref:status` to summarize current heads, and `pnpm run ref:update` to fast-forward existing checkouts.

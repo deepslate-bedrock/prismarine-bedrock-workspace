@@ -1,0 +1,48 @@
+name: Update Repo Refs
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - prismarine-bedrock-updated
+      - prismarine-bedrock-ai-updated
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-repo-refs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Update submodule refs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Update submodules from configured branches
+        run: git submodule update --remote --merge repos/prismarine-bedrock repos/prismarine-bedrock-ai
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet -- repos/prismarine-bedrock repos/prismarine-bedrock-ai; then
+            echo "Submodule refs are already current."
+            exit 0
+          fi
+
+          git add repos/prismarine-bedrock repos/prismarine-bedrock-ai
+          git commit -m "Update repo refs"
+          git push
