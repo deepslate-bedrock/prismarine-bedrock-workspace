@@ -7,7 +7,7 @@
     "test:base": "pnpm --dir repos/prismarine-bedrock run test:static",
     "test:base:fake-world": "pnpm --dir repos/prismarine-bedrock run test:fake-world",
     "test:ai": "pnpm --dir repos/prismarine-bedrock-ai run test:static",
-    "repos:update": "git submodule update --remote --merge repos/prismarine-bedrock repos/prismarine-bedrock-ai",
+    "repos:update": "git submodule update --remote --checkout repos/prismarine-bedrock repos/prismarine-bedrock-ai",
     "ref:list": "node scripts/reference-repos.js list",
     "ref:status": "node scripts/reference-repos.js status",
     "ref:install": "node scripts/reference-repos.js install",

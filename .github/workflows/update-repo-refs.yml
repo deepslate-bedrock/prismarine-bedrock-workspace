@@ -34,7 +34,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Update submodules from configured branches
-        run: git submodule update --remote --merge repos/prismarine-bedrock repos/prismarine-bedrock-ai
+        run: git submodule update --remote --checkout repos/prismarine-bedrock repos/prismarine-bedrock-ai
 
       - name: Commit and push changes
         run: |
